@@ -87,7 +87,7 @@ blockquote{margin:0}
 .team .big p{margin:0 0 2rem;font:italic clamp(1.4rem,2.6vw,2rem)/1.4 var(--serif);color:var(--deep)}
 .names{list-style:none;margin:0 0 1.25rem;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
 .names li{padding:.5rem 1.1rem;background:var(--wash);border:1.5px solid var(--lilac);border-radius:999px;font-weight:600;color:var(--deep)}
-.from{margin:0;color:var(--muted)}
+.from{margin:0;color:var(--muted);display:flex;align-items:center;gap:.6rem}
 
 .video{background:var(--wash)}
 .frame{aspect-ratio:16/9;max-width:900px;border-radius:20px;overflow:hidden;background:var(--lilac)}
