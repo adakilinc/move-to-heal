@@ -26,6 +26,8 @@ neg "large-blur neutral shadow" 'echo ".a{box-shadow:0 4px 40px rgba(0,0,0,.2)}"
 neg "filter blur"            'echo ".a{filter:blur(6px)}" >> "$T/c/style.css"'
 neg "missing asset"          'rm "$T/c/img/team.webp"'
 neg "missing team name"      'sed -i "s/Eylul Karabulak/X/" "$T/c/index.html"'
+neg "percent next to accuracy" 'sed -i "s/High accuracy across/High accuracy of 97% across/" "$T/c/index.html"'
+neg "app username in text"   'echo "<p>Welcome, Say""brone</p>" >> "$T/c/index.html"'
 neg "heavy page"             'head -c 1600000 /dev/zero > "$T/c/img/big.jpg"'
 
 # horizontal overflow at 360 px: inject a probe script into a temp copy and read the DOM back

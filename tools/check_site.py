@@ -121,9 +121,18 @@ req=["Youth Team Winner · Global AI Hackathon 2025","Youth Team Winner, Global 
  "Cross-Body Shoulder Stretch","Neck Stretch with Hand Assistance","Double Knee to Chest","Inner Thigh Lift","Wall Shoulder Press",
  "Side-Lying Leg Raise","Wall Sit","Cobra Stretch","Glute Bridge",
  "Watch our video","Our story","Photo and quote: MIT App Inventor Winners Spotlight","© 2026 Move to Heal team","Built with MIT App Inventor",
- "does not replace a physiotherapist","PoseNet","https://youtu.be/oen8PSz9ios","youtube-nocookie.com/embed/oen8PSz9ios"]
+ "does not replace a physiotherapist","3,000+ skeleton images","Meet Mova, your AI rehab assistant","Mova does not replace a doctor or physiotherapist","High accuracy across all 9 exercises in our tests","17 body keypoints","9 models","Can’t see you","PoseNet","https://youtu.be/oen8PSz9ios","youtube-nocookie.com/embed/oen8PSz9ios"]
 miss=[r for r in req if r not in text_norm and r.replace("&","&amp;") not in allt]
 (fail(f"missing required text: {miss}") if miss else ok(f"{len(req)} required texts present"))
+# no numbers/percentages for accuracy; no percent sign in visible text at all; username must not appear
+vis=re.sub(r"<(script|style)[^>]*>.*?</\1>","",allt,flags=re.S)
+vis=re.sub(r"<[^>]+>"," ",vis)
+vis=re.sub(r"\s+"," ",vis)
+if re.search(r"accura[a-z]*[^.]{0,80}%|%[^.]{0,80}accura",vis,re.I): fail("percentage near 'accuracy'")
+elif "%" in vis: fail("percent sign in visible text")
+else: ok("no percentages in visible text")
+u="say"+"brone"
+if u in vis.lower(): fail("app username appears in page text")
 # banned third-party logos
 for f in os.listdir(os.path.join(root,"img")) if os.path.isdir(os.path.join(root,"img")) else []:
     if re.search(r"logo|spotlight|appathon",f,re.I): fail(f"suspect image file {f}")

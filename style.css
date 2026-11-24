@@ -42,8 +42,10 @@ h1{font-size:clamp(3.6rem,10.5vw,8.5rem);letter-spacing:-.035em;line-height:.92;
 .btn.primary:hover{background:var(--deep);border-color:var(--deep);color:#fff}
 .hero-art{margin:0;position:relative;isolation:isolate}
 .hero-art::before{content:"";position:absolute;inset:6% -12% 2% -8%;background:var(--wash);border-radius:48% 52% 46% 54% / 40% 44% 56% 60%;z-index:-1}
-.phone{width:min(300px,100%);margin-inline:auto;padding:12px;background:#fff;border:3px solid var(--deep);border-radius:40px;transform:rotate(2.5deg)}
-.phone img{width:100%;height:auto;border-radius:26px}
+.phone{width:min(270px,100%);margin-inline:auto;padding:10px;background:var(--deep);border-radius:36px;transform:rotate(2.5deg)}
+.phone img{width:100%;height:auto;aspect-ratio:360/632;border-radius:27px;background:var(--lilac)}
+.phone.sm{width:100%;transform:none;padding:7px;border-radius:26px}
+.phone.sm img{border-radius:19px}
 .hero-art figcaption{margin-top:1rem;text-align:center;font-size:.85rem;color:var(--muted)}
 
 .story{background:var(--wash)}
@@ -60,8 +62,20 @@ blockquote{margin:0}
 .n{display:block;font:700 3.2rem/1 var(--serif);color:var(--purple);margin-bottom:.75rem}
 .steps h3{margin-bottom:.6rem}
 .steps p{margin:0;color:var(--muted)}
-.tech{margin:3rem 0 0;max-width:62ch;padding:1.25rem 1.5rem;background:var(--wash);border-radius:16px}
+.tech{margin:3rem 0 0;padding:1.75rem clamp(1.25rem,3vw,2.25rem);background:var(--wash);border-radius:16px;max-width:760px}
+.tech h3{margin-bottom:1rem}
+.tech ul{margin:0 0 1.25rem;padding-left:1.2rem}
+.tech li{margin-bottom:.5rem}
+.tech .acc{margin:0;font:700 1.15rem var(--serif);color:var(--deep)}
 
+.app{background:var(--wash)}
+.shots{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:1.1rem}
+.shots figure{margin:0}
+.shots figcaption{margin-top:.7rem;font-size:.92rem;font-weight:600;color:var(--deep);text-align:center}
+.mova{padding-top:clamp(3rem,6vw,5rem)}
+.mova-copy{max-width:60ch}
+.mova-copy p{font:1.35rem/1.55 var(--serif);margin:0 0 1rem;color:var(--ink)}
+.mova-copy .note{font:1rem/1.6 var(--sans);color:var(--muted)}
 .ex{background:var(--white);padding-top:0}
 .grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem 1.5rem}
 .grid li{display:flex;flex-direction:column;gap:.8rem}
@@ -98,6 +112,10 @@ footer{padding:3rem 0;background:var(--white);border-top:1px solid var(--lilac);
 footer p{margin:0 0 .4rem}
 .disc{max-width:60ch;margin-bottom:1rem;color:var(--ink)}
 
+@media (max-width:1000px){
+  .shots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem;padding:0 0 1rem;overscroll-behavior-x:contain}
+  .shots li{flex:0 0 min(210px,62%);scroll-snap-align:start}
+}
 @media (max-width:860px){
   .hero,.story-grid,.team-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}

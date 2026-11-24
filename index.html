@@ -29,6 +29,7 @@
   <nav aria-label="Main">
     <a href="#story">Story</a>
     <a href="#how">How it works</a>
+    <a href="#app">The app</a>
     <a href="#exercises">Exercises</a>
     <a href="#awards">Awards</a>
     <a href="#team">Team</a>
@@ -48,10 +49,9 @@
     </div>
     <figure class="hero-art">
       <div class="phone">
-        <!-- Drop a real app screenshot here: replace the src below (portrait, about 248x392). -->
-        <img src="img/app-screen.svg" width="248" height="392" alt="Illustration of the app screen: a pose skeleton over a person exercising, with a Correct bar and a Wrong bar below">
+        <img src="img/app-body-area.webp" width="360" height="632" alt="Move to Heal app screen asking which part of your body needs extra care today, with Neck and Shoulders, Waist, and Knee and Hip choices">
       </div>
-      <figcaption>Instant feedback while you move. Illustration of the app screen.</figcaption>
+      <figcaption>The Move to Heal app</figcaption>
     </figure>
   </section>
 
@@ -96,7 +96,42 @@
           <p>Correct and wrong bars show how your form compares, while you are still in the movement.</p>
         </li>
       </ol>
-      <p class="tech">Under the hood, PoseNet finds the joints in the camera image, and an AI classifier trained for each exercise judges the form. The whole app is built with MIT App Inventor.</p>
+      <div class="tech" aria-labelledby="h-tech">
+        <h3 id="h-tech">Under the hood</h3>
+        <ul>
+          <li>Trained on 3,000+ skeleton images</li>
+          <li>Pose detection with PoseNet (17 body keypoints)</li>
+          <li>One custom image-classifier model per exercise (9 models), trained on synthetic 3D-mannequin poses showing correct form and common mistakes</li>
+          <li>3D-animated demo videos for every exercise</li>
+          <li>&ldquo;Can&rsquo;t see you&rdquo; guidance when your body is not fully in view</li>
+          <li>Built with MIT App Inventor</li>
+        </ul>
+        <p class="acc">High accuracy across all 9 exercises in our tests.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="app" class="app" aria-labelledby="h-app">
+    <div class="wrap">
+      <h2 id="h-app">Inside the app</h2>
+      <ul class="shots" tabindex="0" aria-label="App screenshots, scroll sideways to see more">
+        <li><figure><div class="phone sm"><img src="img/app-login.webp" width="360" height="632" loading="lazy" alt="The Move to Heal log in screen with the app logo, two fields and a Log in / Sign up button"></div><figcaption>Log in / sign up</figcaption></figure></li>
+        <li><figure><div class="phone sm"><img src="img/app-home.webp" width="360" height="632" loading="lazy" alt="The home screen with four choices: Favorite Exercises, Exercise History, New Exercise and AI Assistant"></div><figcaption>Home</figcaption></figure></li>
+        <li><figure><div class="phone sm"><img src="img/app-body-area.webp" width="360" height="632" loading="lazy" alt="Screen asking which part of your body needs extra care: Neck and Shoulders, Waist, or Knee and Hip"></div><figcaption>Pick a body area</figcaption></figure></li>
+        <li><figure><div class="phone sm"><img src="img/app-knee-hip.webp" width="360" height="632" loading="lazy" alt="List of knee and hip exercises: Side-Lying Leg Raise, Inner Thigh Lift and Wall Sit, each with a favorite star"></div><figcaption>Knee &amp; hip exercises</figcaption></figure></li>
+        <li><figure><div class="phone sm"><img src="img/app-favorites.webp" width="360" height="632" loading="lazy" alt="Favorites list showing Cross-Body Shoulder Stretch, Neck Stretch with Hand Assistance and Wall Shoulder Press"></div><figcaption>Favorites</figcaption></figure></li>
+        <li><figure><div class="phone sm"><img src="img/app-mova.webp" width="360" height="632" loading="lazy" alt="The Mova chat screen with an introduction and a box to ask about pain or movement"></div><figcaption>Mova AI assistant</figcaption></figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="mova" class="mova" aria-labelledby="h-mova">
+    <div class="wrap">
+      <h2 id="h-mova">Meet Mova, your AI rehab assistant</h2>
+      <div class="mova-copy">
+        <p>Ask Mova about your pain or movement challenges. Mova suggests exercises and gentle wellness tips, to support your recovery one movement at a time.</p>
+        <p class="note">Mova does not replace a doctor or physiotherapist. If you have a special condition, talk to a professional first.</p>
+      </div>
     </div>
   </section>
 
